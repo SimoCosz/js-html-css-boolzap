@@ -16,3 +16,116 @@ a{
   text-decoration: none;
   color: currentColor;
 }
+
+
+/* Style */
+.container{
+  border: 1px solid black;
+  margin: 30px 100px;
+  min-width: 80%;
+  min-height: 600px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nav-bar{
+  height: 50px;
+  background-color: #F0F2F5;
+  display: flex;
+  align-items: center;
+}
+
+.profile-navbar{
+  width: 30%;
+  height: 100%;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-right: 1px solid #D1D7DB;
+}
+
+.dot-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.fa-circle{
+  font-size: 10px;
+}
+
+.circle-red{
+  color: #FF5E57;
+}
+
+.circle-yellow{
+  color: #FFBC30;
+}
+
+.circle-green{
+  color: #26C840;
+}
+
+.profile-controls{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-image{
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.controls{
+  display: flex;
+  justify-content: space-around;
+  gap: 15px;
+  font-size: 14px;
+  color: #54656F;
+}
+
+.contact-navbar{
+  width: 70%;
+  height: 100%;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-info{
+  display: flex;
+  gap: 10px;
+}
+
+#access{
+  font-size: 14px;
+  color: #54656F;
+}
+
+.chat-controls{
+  display: flex;
+  align-items: center;
+  color: #54656F;
+  font-size: 14px;
+}
+
+.chat-type{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-right: 1px solid #D1D7DB;
+  padding: 0 20px;
+}
+
+.chat-command{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+}
