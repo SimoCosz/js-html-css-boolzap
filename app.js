@@ -1,3 +1,5 @@
+const textTime = document.querySelectorAll('.text-time');
+
 const app = new Vue({
   el:'#app',
   data:{
@@ -5,7 +7,7 @@ const app = new Vue({
     contacts: [
       {
         name: 'Marco',
-        avatar: 'https://picsum.photos/200',
+        avatar: 'img/avatar_01.jpeg',
         visible: true,
         messages: [
           {
@@ -27,7 +29,7 @@ const app = new Vue({
       },
       { 
         name: 'Fabio',
-        avatar: 'https://picsum.photos/200',
+        avatar: 'img/avatar_02.jpeg',
         visible: true,
         messages: [
           {
@@ -46,13 +48,62 @@ const app = new Vue({
             status: 'sent'
           }
         ],
-      }  
-    ]
+      },
+      {
+        name: 'samuele',
+        avatar: 'img/avatar_04.jpeg',
+        visible: true,
+        messages: [
+          {
+            date: '28/03/2020 10:20:10',
+            text: 'La Marianna va in campagna',
+            status: 'received'
+          },
+          {
+            date: '28/03/2020 10:20:10',
+            text: 'Sicuro di non aver sbagliato chat?',
+            status: 'sent'
+          },
+          {
+            date: '28/03/2020 10:20:10',
+            text: 'Ah scusa!',
+            status: 'received'
+          }
+        ],
+      },
+      {
+        name: 'samuele',
+        avatar: 'img/avatar_04.jpeg',
+        visible: true,
+        messages: [
+          {
+            date: '10/01/2020 15:50:00',
+            text: 'Lo sai che ha aperto una nuova pizzeria?',
+            status: 'sent'
+          },
+          {
+            date: '10/01/2020 15:50:00',
+            text: 'si, ma preferirei andare al cinema',
+            status: 'received'
+          },
+        ],
+      },
+    ],
   },
 
   methods:{
-    
-  }
+    newMessage: function(item){
+      if(this.newMessage !== ''){
+        const newMessage = {
+          date: '20/03/2020 16:30:00',
+          text: 'Ciao come stai?',
+          status: 'sent'
+        };
+        this.message.push(item);
+        this.newMessage = '';
+      }
+    },
+   }
 
 })
 

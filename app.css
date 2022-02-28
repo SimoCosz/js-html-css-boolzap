@@ -219,8 +219,7 @@ a{
  height: 90%;
  overflow: auto;
  display: flex;
- flex-direction: column;
- justify-content: flex-end;
+  align-items: flex-end;
  padding: 20px;
 }
 
@@ -252,18 +251,19 @@ a{
 }
 
 .row-received.active{
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .message-box{
   padding: 0 5px;
-  width: 30%;
+  width: 50%;
   border-radius: 8px;
   box-shadow: 2px 2px 2px #84828A;
   font-size: 13px;
   margin-bottom: 10px;
   flex-direction: column;
-  display: block;
+  display: flex;
 }
 
 .row-sent{
@@ -274,10 +274,12 @@ a{
 
 .received{
   background-color: white;
+  align-self: flex-start;
 }
 
 .sent{
   background-color: #D9FED2;
+  align-self: flex-end;
 }
 
 .text-time{
