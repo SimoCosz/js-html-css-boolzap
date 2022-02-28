@@ -71,7 +71,7 @@
               <input type="text" name="" id="search" placeholder="cerca o inizia una nuova chat">
             </div>
     
-            <div class="contact" v-for='(contact, i) in contacts'>
+            <div class="contact" v-for='(contact, i) in contacts' @click='currentIndex = i' :class="currentIndex == i? 'active' : ' ' ">
               <div class="profile-image">
                 <img :src="contact.avatar" alt="">
               </div>
@@ -90,8 +90,8 @@
     
           <div class="chat-wrapper">
             <div class="message">
-              <div class="row-received row-message" v-for='message in contacts[0].messages' :class="message.status === 'sent'? 'row-sent' : 'row-received' ">
-                <div class="message-box" :class="message.status === 'sent'? 'sent' : 'received' ">
+              <div class="row-received row-message" :class="currentIndex == i? 'active' : ' ' "  v-for='(contact, i) in contacts'>
+                <div class="message-box" v-for='(message, i) in contact.messages' :class="message.status === 'sent'? 'sent' : 'received',">
                   <div class="text">
                     {{message.text}} 
                   </div>
@@ -100,8 +100,8 @@
                   </div>
                 </div>
               </div>
-
             </div>
+
             <div class="write-message">
               <i class="far fa-smile"></i>
               <i class="fas fa-paperclip"></i>

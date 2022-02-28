@@ -178,6 +178,10 @@ a{
   padding: 0 10px;
 }
 
+.contact.active{
+  background-color: #F0F2F5;
+}
+
 .info{
   display: flex;
   justify-content: space-between;
@@ -244,6 +248,11 @@ a{
 
 .row-received{
   width: 100%;
+  display: none;
+}
+
+.row-received.active{
+  display: block;
 }
 
 .message-box{
@@ -253,18 +262,14 @@ a{
   box-shadow: 2px 2px 2px #84828A;
   font-size: 13px;
   margin-bottom: 10px;
-  display: flex;
   flex-direction: column;
-}
-
-.message-box.active{
   display: block;
 }
 
 .row-sent{
   width: 100%;
-  display: flex;
   justify-content: flex-end;
+  display: flex;
 }
 
 .received{
