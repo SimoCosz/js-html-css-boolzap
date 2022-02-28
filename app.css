@@ -203,6 +203,7 @@ a{
 }
 
 .chat-wrapper{
+  position: relative;
   background-image: url(https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png);
   max-height: 100%;
   min-width: 70%;
@@ -220,6 +221,10 @@ a{
 }
 
 .write-message{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -252,7 +257,12 @@ a{
   flex-direction: column;
 }
 
+.message-box.active{
+  display: block;
+}
+
 .row-sent{
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }

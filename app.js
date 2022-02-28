@@ -1,6 +1,7 @@
 const app = new Vue({
   el:'#app',
   data:{
+    currentIndex: 0,
     contacts: [
       {
         name: 'Marco',
@@ -47,8 +48,14 @@ const app = new Vue({
         ],
       }  
     ]
+  },
+
+  methods:{
+    
   }
 
-  
-
 })
+
+// for (i=0; ì<message.length; i++){
+//   const testo = message[i].text
+// }
