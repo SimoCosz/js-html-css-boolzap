@@ -72,8 +72,8 @@ const app = new Vue({
         ],
       },
       {
-        name: 'samuele',
-        avatar: 'img/avatar_04.jpeg',
+        name: 'Luisa',
+        avatar: 'img/avatar_05.jpeg',
         visible: true,
         messages: [
           {
@@ -92,21 +92,7 @@ const app = new Vue({
   },
 
   methods:{
-    newMessage: function(item){
-      if(this.newMessage !== ''){
-        const newMessage = {
-          date: '20/03/2020 16:30:00',
-          text: 'Ciao come stai?',
-          status: 'sent'
-        };
-        this.message.push(item);
-        this.newMessage = '';
-      }
-    },
+    
    }
 
 })
-
-// for (i=0; ì<message.length; i++){
-//   const testo = message[i].text
-// }

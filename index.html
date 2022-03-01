@@ -24,7 +24,7 @@
   
           <div class="profile-controls">
             <div class="profile-image">
-              <img src="https://picsum.photos/200" alt="">
+              <img src="img/my-avatar.jpeg" alt="">
             </div>
   
             <div class="controls">
@@ -36,13 +36,13 @@
         </div>
   
         <div class="contact-navbar">
-          <div class="contact-info">
+          <div class="contact-info" v-for='(contact, i) in contacts'  :class="currentIndex == i ? 'active' : '' ">
             <div class="profile-image">
-              <img src="https://picsum.photos/200" alt="">
+              <img :src="contact.avatar" alt="">
             </div>
             
             <div class="chat-info">
-                <h4>Mario Rossi</h4>
+                <h4 class="user-name">{{contact.name}}</h4>
                 <p class="description">Ultimo accesso oggi alle 12:20</p>
             </div>
           </div>
@@ -78,7 +78,7 @@
               <div class="info">
                 <div class="chat-contact">
                   <h4>{{contact.name}}</h4>
-                  <i class="fas fa-check-double description"> Ciao amico mio!</i>
+                  <i class="fas fa-check-double description"> {{contact.messages[contact.messages.length -1].text}}</i>
                 </div>
                 <div class="time">
                   12:20
