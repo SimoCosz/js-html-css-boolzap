@@ -96,7 +96,7 @@ const app = new Vue({
     sendMessageAuto: function(currentIndex){
       setTimeout(() => {
         const item = {
-          data: '28/02/2022 12:18:36',
+          date: '28/02/2022 12:18:36',
           text: 'ok',
           status: 'received',
         };
@@ -108,7 +108,7 @@ const app = new Vue({
 
       if(this.newMessage !== ''){
         const item = {
-          data: '28/02/2022 12:18:36',
+          date: '28/02/2022 12:18:36',
           text: this.newMessage,
           status: 'sent',
         };
