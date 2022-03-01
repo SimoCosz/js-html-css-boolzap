@@ -5,6 +5,7 @@ const app = new Vue({
   data:{
     currentIndex: 0,
     newMessage: '',
+    search: '',
     contacts: [
       {
         name: 'Marco',
@@ -114,9 +115,24 @@ const app = new Vue({
         };
         this.contacts[currentIndex].messages.push(item);
         this.newMessage = '';
+        this.sendMessageAuto(currentIndex)
       }
 
+    },
+    findChat: function(){
+      for (i = 0; i < this.contacts.length; i++){
+        
+        if (this.contacts[i].name.toLowerCase().includes(this.search.toLowerCase())){
+          this.contacts[i].visible = true
+        } else {
+          this.contacts[i].visible = false
+        }
+
+      }
     }
-   }
+   },
 
 })
+
+
+

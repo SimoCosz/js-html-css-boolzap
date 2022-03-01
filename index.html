@@ -71,20 +71,20 @@
               <button>
                 <i class="fas fa-search"></i>
               </button>
-              <input type="text" name="" id="search" placeholder="cerca o inizia una nuova chat">
+              <input type="text" name="" id="search" placeholder="cerca o inizia una nuova chat" v-model='search' @keyup='findChat()'>
             </div>
     
-            <div class="contact" v-for='(contact, i) in contacts' @click='currentIndex = i' :class="currentIndex == i? 'active' : ' ' ">
+            <div class="contact" v-for='(contact, i) in contacts' @click='currentIndex = i' :class="[currentIndex == i? 'active' : ' ', contact.visible == false? 'invisible' : '' ]">
               <div class="profile-image">
                 <img :src="contact.avatar" alt="">
               </div>
               <div class="info">
                 <div class="chat-contact">
-                  <h4>{{contact.name}}</h4>
+                  <h4 class="name">{{contact.name}}</h4>
                   <i class="fas fa-check-double description"> {{contact.messages[contact.messages.length -1].text}}</i>
                 </div>
                 <div class="time">
-                  12:20
+                  {{contact.messages[contact.messages.length -1].date}}
                 </div>
               </div>
             </div>
@@ -112,7 +112,7 @@
             <div class="write-message">
               <i class="far fa-smile"></i>
               <i class="fas fa-paperclip"></i>
-              <input type="text" placeholder="Scrivi un messaggio" v-model='newMessage' @keyUp.enter='sendMessage(currentIndex), sendMessageAuto(currentIndex)'>
+              <input type="text" placeholder="Scrivi un messaggio" v-model='newMessage' @keyUp.enter='sendMessage(currentIndex)'>
               <i class="fas fa-microphone"></i>
             </div>
           </div>
