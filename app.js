@@ -50,7 +50,7 @@ const app = new Vue({
         ],
       },
       {
-        name: 'samuele',
+        name: 'Samuele',
         avatar: 'img/avatar_04.jpeg',
         visible: true,
         messages: [

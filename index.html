@@ -68,6 +68,9 @@
           <div class="contacts-wrapper">
     
             <div class="search-wrapper">
+              <button>
+                <i class="fas fa-search"></i>
+              </button>
               <input type="text" name="" id="search" placeholder="cerca o inizia una nuova chat">
             </div>
     
@@ -92,12 +95,16 @@
             <div class="message">
               <div class="row-received row-message" :class="currentIndex == i? 'active' : ' ' "  v-for='(contact, i) in contacts'>
                 <div class="message-box" v-for='(message, i) in contact.messages' :class="message.status === 'sent'? 'sent' : 'received',">
+                  <div class="prove-bordi">
+    
+                  </div>
                   <div class="text">
                     {{message.text}} 
                   </div>
                   <div class="text-time">
                     {{message.date}}
                   </div>
+
                 </div>
               </div>
             </div>
