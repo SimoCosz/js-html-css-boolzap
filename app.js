@@ -4,6 +4,7 @@ const app = new Vue({
   el:'#app',
   data:{
     currentIndex: 0,
+    newMessage: '',
     contacts: [
       {
         name: 'Marco',
@@ -92,7 +93,30 @@ const app = new Vue({
   },
 
   methods:{
-    
+    sendMessageAuto: function(currentIndex){
+      setTimeout(() => {
+        const item = {
+          data: '28/02/2022 12:18:36',
+          text: 'ok',
+          status: 'received',
+        };
+        this.contacts[currentIndex].messages.push(item);
+      }, 3000)
+    },
+
+    sendMessage: function(currentIndex){
+
+      if(this.newMessage !== ''){
+        const item = {
+          data: '28/02/2022 12:18:36',
+          text: this.newMessage,
+          status: 'sent',
+        };
+        this.contacts[currentIndex].messages.push(item);
+        this.newMessage = '';
+      }
+
+    }
    }
 
 })
