@@ -106,7 +106,6 @@ const app = new Vue({
     },
 
     sendMessage: function(currentIndex){
-
       if(this.newMessage !== ''){
         const item = {
           date: '28/02/2022 12:18:36',
