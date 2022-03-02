@@ -6,6 +6,8 @@ const app = new Vue({
     currentIndex: 0,
     newMessage: '',
     search: '',
+    isActiveNav: false,
+    isActiveMessage: false,
     contacts: [
       {
         name: 'Marco',
@@ -126,8 +128,13 @@ const app = new Vue({
         } else {
           this.contacts[i].visible = false
         }
-
       }
+    },
+    openDropdownNav: function(){
+      this.isActiveNav = !this.isActiveNav
+    },
+    openDropdownMessage: function(){
+      this.isActiveMessage = !this.isActiveMessage
     }
    },
 

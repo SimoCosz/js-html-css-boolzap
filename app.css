@@ -40,6 +40,7 @@ a{
   background-color: #F0F2F5;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .profile-navbar{
@@ -144,6 +145,23 @@ a{
   align-items: center;
   gap: 20px;
   padding: 0 20px;
+}
+
+.dropdown{
+  display: none;
+}
+
+.dropdown_active{
+  display: block;
+}
+
+.dropdown-nav{
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  z-index: 9999;
 }
 
 main{
@@ -273,6 +291,7 @@ main{
   border: none;
   border-radius: 8px;
   padding: 0 10px;
+  margin: 0 10px;
 }
 
 .row-received{
@@ -286,22 +305,72 @@ main{
 }
 
 .message-box{
-  padding: 0 5px;
-  width: 50%;
+  padding: 0 10px;
+  min-width: 100px;
+  max-width: 70%;
+  white-space: wrap;
   border-radius: 8px;
   filter: drop-shadow( 3px 3px 1px #84828A);
   font-size: 13px;
   margin-bottom: 2px;
-  flex-direction: column;
-  display: flex;
   position: relative;
 }
 
-.row-sent{
+.chavron-chat{
+  position: absolute;
+  top: 30%;
+  right: 0;
+  transform: translateY(-50%);
+  margin: 2px 5px;
+  display: none;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.message-box.sent .fa-chevron-down{
+  background-color: #D9FED2;
+  box-shadow: 2px 2px 10px #D9FED2;
+}
+
+.message-box.sent:hover .fa-chevron-down{
+  display: block;
+}
+
+.message-box.received .fa-chevron-down{
+  background-color: white;
+  box-shadow: 0 0 5px white;
+}
+
+.message-box.received:hover .fa-chevron-down{
+  display: block;
+}
+
+.dropdown-message{
+  min-width: 160px;
+  max-height: 80px;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  z-index: 999999;
+  padding: 0 10px;
+}
+
+.message-box.sent .dropdown-message{
+  position: absolute;
+  top: 50%;
+  right: 10px;
+}
+
+.message-box.received .dropdown-message{
+  position: absolute;
+  top: 50%;
+  left: 90%;
+}
+
+/* .row-sent{
   width: 100%;
   justify-content: flex-end;
   display: flex;
-}
+} */
 
 .received{
   background-color: white;

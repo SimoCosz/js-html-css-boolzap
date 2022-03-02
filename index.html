@@ -54,7 +54,10 @@
             </div>
             <div class="chat-command">
               <i class="fas fa-search"></i>
-              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-down" @click='openDropdownNav()'></i>
+            </div>
+            <div class="dropdown dropdown-nav" :class='{dropdown_active: isActiveNav}'>
+
             </div>
           </div>
   
@@ -101,7 +104,11 @@
                   <div class="text-time">
                     {{message.date}}
                   </div>
-
+                    <i class="fas fa-chevron-down chavron-chat" @click='openDropdownMessage()'></i>
+                    <div class="dropdown dropdown-message" v-for='' :class='{dropdown_active: isActiveMessage == i}'>
+                      <div>Info messagi</div>
+                      <div>Cancella messaggio</div>
+                    </div>
                 </div>
               </div>
             </div>
