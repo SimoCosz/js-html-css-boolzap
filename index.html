@@ -84,10 +84,10 @@
               <div class="info">
                 <div class="chat-contact">
                   <h4 class="name">{{contact.name}}</h4>
-                  <i class="fas fa-check-double description"> {{contact.messages[contact.messages.length -1].text}}</i>
+                  <i class="fas fa-check-double description"> {{contact.messages[contact.messages.length -1]?.text}}</i>
                 </div>
                 <div class="time">
-                  {{contact.messages[contact.messages.length -1].date}}
+                  {{contact.messages[contact.messages.length -1]?.date}}
                 </div>
               </div>
             </div>
@@ -99,10 +99,10 @@
               <div class="row-received row-message" :class="currentIndex == i? 'active' : ' ' "  v-for='(contact, i) in contacts'>
                 <div class="message-box" v-for='(message, i) in contact.messages' :class="message.status === 'sent'? 'sent' : 'received',">
                   <div class="text">
-                    {{message.text}} 
+                    {{message?.text}} 
                   </div>
                   <div class="text-time">
-                    {{message.date}}
+                    {{message?.date}}
                   </div>
                     <i class="fas fa-chevron-down chavron-chat" @click='openDropdownMessage(currentIndex, i)'></i>
                     <div class="dropdown dropdown-message" :class="ActiveMessage == i? 'dropdown_active' : '' ">
