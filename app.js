@@ -152,8 +152,13 @@ const app = new Vue({
         this.ActiveMessage = i;
       }
     },
-    deleteMessage: function(){
-      
+    deleteMessage: function(i){
+      this.contacts[this.currentIndex].messages.splice(i, 1);
+      if (this.ActiveMessage == i){
+        this.ActiveMessage = null
+      } else {
+        this.ActiveMessage = i;
+      }
     }
    },
 
