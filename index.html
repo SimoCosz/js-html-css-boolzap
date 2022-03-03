@@ -77,7 +77,7 @@
               <input type="text" name="" id="search" placeholder="cerca o inizia una nuova chat" v-model='search' @keyup='findChat()'>
             </div>
     
-            <div class="contact" v-for='(contact, i) in contacts' @click='currentIndex = i' :class="[currentIndex == i? 'active' : ' ', contact.visible == false? 'invisible' : '' ]">
+            <div class="contact" v-for='(contact, i) in contacts' @click='currentIndex = i; ActiveMessage = null' :class="[currentIndex == i? 'active' : ' ', contact.visible == false? 'invisible' : '' ]">
               <div class="profile-image">
                 <img :src="contact.avatar" alt="">
               </div>
@@ -104,10 +104,10 @@
                   <div class="text-time">
                     {{message.date}}
                   </div>
-                    <i class="fas fa-chevron-down chavron-chat" @click='openDropdownMessage()'></i>
-                    <div class="dropdown dropdown-message" v-for='' :class='{dropdown_active: isActiveMessage == i}'>
-                      <div>Info messagi</div>
-                      <div>Cancella messaggio</div>
+                    <i class="fas fa-chevron-down chavron-chat" @click='openDropdownMessage(currentIndex, i)'></i>
+                    <div class="dropdown dropdown-message" :class="ActiveMessage == i? 'dropdown_active' : '' ">
+                      <div class="option">Info messagi</div>
+                      <div class="option">Cancella messaggio</div>
                     </div>
                 </div>
               </div>
