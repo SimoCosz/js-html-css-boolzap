@@ -7,7 +7,7 @@ const app = new Vue({
     newMessage: '',
     search: '',
     isActiveNav: false,
-    ActiveMessage: null,
+    activeMessage: null,
     contacts: [
       {
         name: 'Marco',
@@ -18,19 +18,16 @@ const app = new Vue({
             date: '10/01/2022 15:50:00',
             text: 'hai portato a spasso il cane?',
             status: 'sent',
-            isActiveMessage: false
           },
           {
             date: '10/01/2022 15:50:00',
             text: 'Ricordati di dargli da mangiare',
             status: 'sent',
-            isActiveMessage: false
           },
           {
             date: '10/01/2022 15:50:00',
             text: 'Tutto fatto!',
             status: 'received',
-            isActiveMessage: false
           }
         ],
       },
@@ -43,19 +40,16 @@ const app = new Vue({
             date: '20/03/2020 16:30:00',
             text: 'Ciao come stai?',
             status: 'sent',
-            isActiveMessage: false
           },
           {
             date: '20/03/2020 16:30:55',
             text: 'Bene grazie! Stasera ci vediamo?',
             status: 'received',
-            isActiveMessage: false
           },
           {
             date: '20/03/2020 16:35:00',
             text: 'Mi piacerebbe ma devo andare a fare la spesa.',
             status: 'sent',
-            isActiveMessage: false
           }
         ],
       },
@@ -68,19 +62,16 @@ const app = new Vue({
             date: '28/03/2020 10:20:10',
             text: 'La Marianna va in campagna',
             status: 'received',
-            isActiveMessage: false
           },
           {
             date: '28/03/2020 10:20:10',
             text: 'Sicuro di non aver sbagliato chat?',
             status: 'sent',
-            isActiveMessage: false
           },
           {
             date: '28/03/2020 10:20:10',
             text: 'Ah scusa!',
             status: 'received',
-            isActiveMessage: false
           }
         ],
       },
@@ -93,13 +84,11 @@ const app = new Vue({
             date: '10/01/2020 15:50:00',
             text: 'Lo sai che ha aperto una nuova pizzeria?',
             status: 'sent',
-            isActiveMessage: false
           },
           {
             date: '10/01/2020 15:50:00',
             text: 'si, ma preferirei andare al cinema',
             status: 'received',
-            isActiveMessage: false
           },
         ],
       },
@@ -146,18 +135,18 @@ const app = new Vue({
     },
     openDropdownMessage: function(currentIndex, i){
       
-      if (this.ActiveMessage == i){
-        this.ActiveMessage = null
+      if (this.activeMessage == i){
+        this.activeMessage = null
       } else {
-        this.ActiveMessage = i;
+        this.activeMessage = i;
       }
     },
     deleteMessage: function(i){
       this.contacts[this.currentIndex].messages.splice(i, 1);
-      if (this.ActiveMessage == i){
-        this.ActiveMessage = null
+      if (this.activeMessage == i){
+        this.activeMessage = null
       } else {
-        this.ActiveMessage = i;
+        this.activeMessage = i;
       }
     }
    },

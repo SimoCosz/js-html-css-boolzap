@@ -324,6 +324,7 @@ main{
   display: none;
   border-radius: 50%;
   padding: 2px;
+  cursor: pointer;
 }
 
 .message-box.sent .fa-chevron-down{
@@ -366,6 +367,7 @@ main{
 
 .option{
   padding: 5px;
+  cursor: pointer;
 }
 
 .option:hover{
