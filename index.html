@@ -30,7 +30,14 @@
             <div class="controls">
               <i class="fas fa-circle-notch"></i>
               <i class="fas fa-pen"></i>
-              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-down" @click='openDropdownProfile()'></i>
+            </div>
+            <div class="dropdown dropdown-profile" :class='{dropdown_active: isActiveProfile}'>
+              <div class="option">Nuovo gruppo</div>
+              <div class="option">Archiviate</div>
+              <div class="option">Messaggi importanti</div>
+              <div class="option">Impostazioni</div>
+              <div class="option">Disconnetti</div>
             </div>
           </div>
         </div>
@@ -57,7 +64,11 @@
               <i class="fas fa-chevron-down" @click='openDropdownNav()'></i>
             </div>
             <div class="dropdown dropdown-nav" :class='{dropdown_active: isActiveNav}'>
-
+              <div class="option">Info contatto</div>
+              <div class="option">Seleziona messaggi</div>
+              <div class="option">Disattiva notifiche</div>
+              <div class="option">Elimina messaggi</div>
+              <div class="option">Elimina chat</div>
             </div>
           </div>
   
@@ -126,7 +137,7 @@
 
   </div>
   
-  
+  <script   src =" https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js " ></script >
   <script src="app.js"></script>
 </body>
 </html>

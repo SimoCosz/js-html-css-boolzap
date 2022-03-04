@@ -51,6 +51,7 @@ a{
   align-items: center;
   justify-content: space-between;
   border-right: 1px solid #D1D7DB;
+  position: relative;
 }
 
 .dot-wrapper{
@@ -80,6 +81,18 @@ a{
   align-items: center;
   gap: 15px;
   flex-wrap: nowrap;
+}
+
+.dropdown-profile{
+  /* width: 200px; */
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  z-index: 9999;
+  background-color: white;
+  box-shadow: 3px 3px 5px #84828A;
+  border-radius: 3px;
+  padding: 5px;
 }
 
 .profile-image{
@@ -156,12 +169,15 @@ a{
 }
 
 .dropdown-nav{
-  width: 200px;
-  height: 100px;
+  /* width: 200px; */
   position: absolute;
-  top: 50px;
-  right: 20px;
+  top: 35px;
+  right: 30px;
   z-index: 9999;
+  background-color: white;
+  box-shadow: 3px 3px 5px #84828A;
+  border-radius: 3px;
+  padding: 5px;
 }
 
 main{
@@ -215,6 +231,7 @@ main{
   align-items: center;
   gap: 10px;
   padding: 0 10px;
+  cursor: pointer;
 }
 
 .contact.active{

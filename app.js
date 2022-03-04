@@ -7,6 +7,7 @@ const app = new Vue({
     newMessage: '',
     search: '',
     isActiveNav: false,
+    isActiveProfile: false,
     activeMessage: null,
     contacts: [
       {
@@ -99,7 +100,7 @@ const app = new Vue({
     sendMessageAuto: function(currentIndex){
       setTimeout(() => {
         const item = {
-          date: '28/02/2022 12:18:36',
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
           text: 'ok',
           status: 'received',
         };
@@ -110,7 +111,7 @@ const app = new Vue({
     sendMessage: function(currentIndex){
       if(this.newMessage !== ''){
         const item = {
-          date: '28/02/2022 12:18:36',
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
           text: this.newMessage,
           status: 'sent',
         };
@@ -133,6 +134,11 @@ const app = new Vue({
     openDropdownNav: function(){
       this.isActiveNav = !this.isActiveNav
     },
+
+    openDropdownProfile: function(){
+      this.isActiveProfile = !this.isActiveProfile
+    },
+
     openDropdownMessage: function(currentIndex, i){
       
       if (this.activeMessage == i){
